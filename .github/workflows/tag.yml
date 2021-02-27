@@ -20,9 +20,9 @@ jobs:
       - name: npm install
         run: |
           cd ~/.simplesdk
-          ~/.simplesdk/setup/install-node.sh --prefix ~/.simplesdk/node
-          ~/.simplesdk/node/bin/npm install --prefix ~/.simplesdk
-          ~/.simplesdk/node/bin/npm install @octokit/rest --prefix ~/.simplesdk
+          ./setup/install-node.sh --prefix ./node
+          ./node/bin/npm install --prefix ./
+          ./node/bin/npm install @octokit/rest --prefix ./
           
           
       - name: create tag
@@ -30,5 +30,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
         run: |
           cd ~/.simplesdk
-          ~/.simplesdk/simple.sh ~/.simplesdk/setup/create-tag.js v0.0.8                                                                                              
+          ./simple.sh ./setup/create-tag.js v0.0.9                                                                                              
         
