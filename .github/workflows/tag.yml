@@ -19,7 +19,6 @@ jobs:
           
       - name: npm install
         run: |
-          cd ~/.simplesdk
           ~/.simplesdk/setup/install-node.sh --prefix ~/.simplesdk/node
           ~/.simplesdk/node/bin/npm install --prefix ~/.simplesdk
           ~/.simplesdk/node/bin/npm install @octokit/rest --prefix ~/.simplesdk
@@ -29,6 +28,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
         run: |
-          cd ~/.simplesdk
-          SIMPLE_PATH=~/.simple ~/.simplesdk/simple.sh ~/.simplesdk/setup/create-tag.js v0.0.7                                                                                              
+           ~/.simplesdk/simple.sh ~/.simplesdk/setup/create-tag.js v0.0.7                                                                                              
         
