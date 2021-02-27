@@ -38,5 +38,5 @@ jobs:
         run: |
           cd ~/.simplesdk
           chmod +x ~/.simplesdk/simple.sh
-          GITHUB_AUTH_TOKEN=${{ secrets.SECRET_TOKEN }} SIMPLE_PATH=~/.simple ~/.simplesdk/simple.sh ~/.simplesdk/setup/create-tag.js v0.0.5                                                                                                 
+          SIMPLE_PATH=~/.simple ~/.simplesdk/simple.sh ~/.simplesdk/setup/create-tag.js v0.0.6                                                                                               
         
