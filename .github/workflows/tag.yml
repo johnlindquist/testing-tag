@@ -26,6 +26,8 @@ jobs:
           
           
       - name: create tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
         run: |
           cd ~/.simplesdk
           SIMPLE_PATH=~/.simple ~/.simplesdk/simple.sh ~/.simplesdk/setup/create-tag.js v0.0.7                                                                                              
