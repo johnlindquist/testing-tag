@@ -35,6 +35,8 @@ jobs:
         run: |
           cd ~/.simplesdk
           ~/.simplesdk/node/bin/npm install --prefix ~/.simplesdk
+          ~/.simplesdk/node/bin/npm install @octokit/rest --prefix ~/.simplesdk
+          
           
       - name: create tag
         run: |
