@@ -25,15 +25,11 @@ jobs:
       - name: Clone simplescripts
         run: |
           git clone https://github.com/johnlindquist/simplescripts.git ~/.simplesdk
-          ls ~/.simplesdk
-          
-      - name: Install latest node
-        run: >
-          ~/.simplesdk/setup/install-node.sh --prefix ~/.simplesdk/node
           
       - name: npm install
         run: |
           cd ~/.simplesdk
+          ~/.simplesdk/setup/install-node.sh --prefix ~/.simplesdk/node
           ~/.simplesdk/node/bin/npm install --prefix ~/.simplesdk
           ~/.simplesdk/node/bin/npm install @octokit/rest --prefix ~/.simplesdk
           
@@ -41,5 +37,5 @@ jobs:
       - name: create tag
         run: |
           cd ~/.simplesdk
-          GITHUB_AUTH_TOKEN=${{ secrets.SECRET_TOKEN }} SIMPLE_PATH=~/.simple ~/.simplesdk/simple.sh ~/.simplesdk/setup/create-tag.js --trust "v0.0.2"                                                                                                       
+          GITHUB_AUTH_TOKEN=${{ secrets.SECRET_TOKEN }} SIMPLE_PATH=~/.simple ~/.simplesdk/simple.sh ~/.simplesdk/setup/create-tag.js v0.0.4                                                                                                      
         
